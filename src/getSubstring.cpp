@@ -22,10 +22,13 @@ char * get_sub_string(char *str, int i, int j){
 	if (str == NULL)
 		return NULL;
 	char *substr = NULL;
+	if (i > j)
+		return NULL;
 	substr = (char *)malloc(sizeof(char)*(j - i + 1));
 	while (i <= j)
 	{
 		substr[k++] = str[i++];
 	}
+	substr[k] = '\0';
 	return substr;
 }
